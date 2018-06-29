@@ -15,6 +15,25 @@ function wallmartApi() {
         type: "GET"
         }).then(function(response) {
             console.log(response);
+            
+            for (var i = 0; i < 6; i++) {
+
+                var itemDiv = $("<div class='item mx-auto'>");
+                var itemName = response.items[i].name;
+                var h = $("<p>").text(itemName);
+
+                var itemImage = $("<img>");
+                itemImage.attr("src", response.items[i].mediumImage);
+
+                var itemPrice = response.items[i].salePrice;
+                var p = $("<p>").text(itemPrice);
+
+                itemDiv.append(h);
+                itemDiv.append(itemImage);
+                itemDiv.append(p);
+
+                $("#wal-items-view").prepend(itemDiv);
+            }
         });
 };
 
@@ -34,12 +53,8 @@ function eBayApi() {
         }).then(function(response) {
             console.log(response);
 
-            for (var i = 0; i < response.length; i++) { 
-
-                var itemName = response.searchResult.item[i];
-                console.log(itemName);
+            for (var i = 0; i < 6; i ++) { 
+                $("ebay-items-view").append('<p>' + JSON.stringify(response.searchResult.item[i].itemId));
             }
-            
-
         });
 };
