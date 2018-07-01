@@ -18,15 +18,15 @@ function wallmartApi() {
             
             for (var i = 0; i < 6; i++) {
 
-                var itemDiv = $("<div class='item mx-auto'>");
+                var itemDiv = $("<div class='item mx-auto text-center'>");
                 var itemName = response.items[i].name;
                 var h = $("<p>").text(itemName);
 
-                var itemImage = $("<img>");
+                var itemImage = $("<img class='text-center'>");
                 itemImage.attr("src", response.items[i].mediumImage);
 
                 var itemPrice = response.items[i].salePrice;
-                var p = $("<p>").text(itemPrice);
+                var p = $("<p class='text-center'>").text(itemPrice);
 
                 itemDiv.append(h);
                 itemDiv.append(itemImage);
@@ -53,8 +53,23 @@ function eBayApi() {
         }).then(function(response) {
             console.log(response);
 
-            for (var i = 0; i < 6; i ++) { 
-                $("ebay-items-view").append('<p>' + JSON.stringify(response.searchResult.item[i].itemId));
+            for (var i = 0; i < 10; i++) { 
+            
+                var itemDiv = $("<div class='item mx-auto text-center'>");
+                var itemName = response.findItemsByKeywordsResponse[0].searchResult[0].item[i].title;
+                var h = $("<p>").text(itemName);
+
+                var itemImage = $("<img>");
+                itemImage.attr("src", response.findItemsByKeywordsResponse[0].searchResult[0].item[i].galleryURL);
+
+                var itemPrice = response.findItemsByKeywordsResponse[0].searchResult[0].item[i].discountPriceInfo[0].originalRetailPrice[0].__value__;
+                var p = $("<p>").text(itemPrice);
+                
+                itemDiv.append(h);
+                itemDiv.append(itemImage);
+                itemDiv.append(p);
+
+                $("#ebay-items-view").prepend(itemDiv);
             }
         });
 };
