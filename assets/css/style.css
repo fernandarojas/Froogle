@@ -1,41 +1,44 @@
-.btn { 
-    border-color: grey;
-    background-color: #39b54a; 
-}
-.form-control { 
-    border-color: grey;
-}
-#search-item { 
-    background-color: black; 
+.tagline { 
     color: white;
+    font-size: 16px;
+}
+
+.jumbotron { 
+    background-color: lightgray;
 }
 
 #find-item { 
     color: white;
     font-size: 14px;
 }
-.item { 
-    border-style: solid;
-    border-color: black;
-    border-width: 0.5px;
-    margin: 10px;
-    padding: 10px;
+
+.btn { 
+    background-color: #39b54a;
+    border-color: lightgray;
+}
+
+#wal-logo { 
+    width: 220px;
+    height: 57px;
+}
+
+#ebay-logo { 
+    width: 190px;
+    height: 70px;
 }
 
 .itemImage { 
     height: 140px;
     width: 140px;
 }
-.header-text { 
-    color: #39b54a; 
-    font-weight: 400;
-}
 
-.text-2 { 
-    color: white; 
+.card-header { 
+    font-weight: 500;
     font-size: 16px;
 }
 
-.jumbotron { 
-    background-color: lightgray;
+.card-footer { 
+    font-weight: 600;
+    font-size: 18px;
+    color: #39b54a; 
 }
