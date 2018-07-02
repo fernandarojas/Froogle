@@ -13,9 +13,6 @@ function wallmartApi() {
     var item = $("#item-input").val().trim();
     var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=rq6dj88wfdksdssv8d2szvq8&query=" + item;
 
-   
-
-
     $.ajax({
         url: queryURL,
         dataType: "jsonp",
@@ -38,13 +35,11 @@ function wallmartApi() {
                 var itemPrice = response.items[i].salePrice;
                 var p = $("<div class='card-footer text-center'>").text("$" + itemPrice);
 
-                var buyButton = $("<button type='button' class='buy-button btn btn-primary'>Buy Now</button>");
+                var productUrl = response.items[i].productUrl;
+                var buyButton = $("<a target='_blank' role='button' class='buy-button btn btn-primary'>Buy Now</a>");
+                buyButton.attr("href", productUrl);
 
-                itemDiv.append(h);
-                itemDiv.append(itemImage);
-                itemDiv.append(p);
-                itemDiv.append(buyButton);
-
+                itemDiv.append(h, itemImage, p, buyButton);
                 $("#wal-items-view").prepend(itemDiv);
             }
         });
@@ -68,7 +63,6 @@ function eBayApi() {
 
             var ebayLogo = $("<img src=' https://upload.wikimedia.org/wikipedia/commons/4/48/EBay_logo.png' id='ebay-logo'>");
             $("#ebay-logo").append(ebayLogo);
-           
 
             for (var i = 0; i < 10; i++) { 
             
@@ -82,13 +76,11 @@ function eBayApi() {
                 var itemPrice = response.findItemsByKeywordsResponse["0"].searchResult["0"].item[i].discountPriceInfo["0"].originalRetailPrice["0"].__value__;
                 var p = $("<div class='card-footer text-center'>").text("$" + itemPrice);
                 
-                var buyButton = $("<button type='button' class='buy-button btn btn-primary'>Buy Now</button>");
+                var productUrl = response.findItemsByKeywordsResponse["0"].searchResult["0"].item[i].viewItemURL;
+                var buyButton = $("<a target='_blank' role='button' class='buy-button btn btn-primary'>Buy Now</a>");
+                buyButton.attr("href", productUrl);
 
-                itemDiv.append(h);
-                itemDiv.append(itemImage);
-                itemDiv.append(p);
-                itemDiv.append(buyButton);
-
+                itemDiv.append(h, itemImage, p, buyButton);
                 $("#ebay-items-view").prepend(itemDiv);
             }
         });
