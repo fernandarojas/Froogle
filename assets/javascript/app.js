@@ -2,6 +2,7 @@ $("#find-item").on("click", function(event) {
     event.preventDefault(); 
 
     $("#wal-logo").empty();
+    $("#ebay-logo").empty();
     $("#walmart-items-view").empty();
     $("#ebay-items-view").empty();
 
@@ -73,7 +74,8 @@ function eBayApi() {
                 var itemImage = $("<img class='card-text mx-auto itemImage'>");
                 itemImage.attr("src", response.findItemsByKeywordsResponse["0"].searchResult["0"].item[i].galleryURL);
 
-                var itemPrice = response.findItemsByKeywordsResponse["0"].searchResult["0"].item[i].discountPriceInfo["0"].originalRetailPrice["0"].__value__;
+                
+                var itemPrice = response.findItemsByKeywordsResponse["0"].searchResult["0"].item["0"].sellingStatus["0"].currentPrice["0"].__value__;
                 var p = $("<div class='card-footer text-center'>").text("$" + itemPrice);
                 
                 var productUrl = response.findItemsByKeywordsResponse["0"].searchResult["0"].item[i].viewItemURL;
@@ -85,3 +87,4 @@ function eBayApi() {
             }
         });
 };
+            
