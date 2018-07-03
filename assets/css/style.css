@@ -4,7 +4,13 @@
 }
 
 .jumbotron { 
-    background-color: lightgray;
+    background-image: url("../images/header-image.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+body { 
+    background-color: "eeeeee";
 }
 
 #find-item { 
@@ -14,7 +20,8 @@
 
 .btn { 
     background-color: #39b54a;
-    border-color: lightgray;
+    border-color: #39b54a;
+  
 }
 
 #wal-logo { 

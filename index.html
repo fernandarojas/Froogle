@@ -7,28 +7,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="assets/images/FroogleFaviCon.png"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
 </head>
 <body>
-    
+
     <div class="container-fluid">
         <div class="jumbotron jumbotron-fluid">
             <div class="row">
                 <div class="col-2-sm mx-auto mt-2">
-                    <img src="assets/images/Froogle-Logo.png" alt="Froogle-Logo" class="mx-auto text-center" width="300" height="120">
+                    <img src="assets/images/Froogle-Logo.png" alt="Froogle-Logo" class="animated bounceInDown mx-auto text-center" width="300" height="120">
                 </div>
             </div>
             <div class="row">
                 <div class="col-9 mx-auto mt-2">
-                    <p class="tagline lead text-center">Search for the item you want. Find the retailer with the best deal.</p>
+                    <p class="tagline lead text-center animated fadeIn">Search for the item you want. Find the retailer with the best deal.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-5-sm mx-auto mt-4">
-                    <input type="text" id="item-input" class="form-control" placeholder="Item or Keyword">
+                    <input type="text" id="item-input" class="form-control animated fadeInUpBig" placeholder="Item or Keyword">
                 </div>
             </div>
             <div class="row">
-                <div class="col-2-sm mx-auto mt-2">
+                <div class="col-2-sm mx-auto mt-2 animated fadeInUpBig">
                     <button class="btn btn-primary" id="find-item" type="submit" value="Find Item">Find Items</button>
                 </div>
             </div>
@@ -44,6 +47,7 @@
             </div>
         </div>
     </div>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>

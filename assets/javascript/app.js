@@ -13,7 +13,7 @@ $("#find-item").on("click", function(event) {
 function wallmartApi() {
     var item = $("#item-input").val().trim();
     var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=rq6dj88wfdksdssv8d2szvq8&query=" + item;
-
+    
     $.ajax({
         url: queryURL,
         dataType: "jsonp",
@@ -74,7 +74,6 @@ function eBayApi() {
                 var itemImage = $("<img class='card-text mx-auto itemImage'>");
                 itemImage.attr("src", response.findItemsByKeywordsResponse["0"].searchResult["0"].item[i].galleryURL);
 
-                
                 var itemPrice = response.findItemsByKeywordsResponse["0"].searchResult["0"].item["0"].sellingStatus["0"].currentPrice["0"].__value__;
                 var p = $("<div class='card-footer text-center'>").text("$" + itemPrice);
                 
@@ -87,4 +86,4 @@ function eBayApi() {
             }
         });
 };
-            
+
