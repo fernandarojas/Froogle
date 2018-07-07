@@ -8,5 +8,3 @@
 * Ebay vs Walmart is our "showcase" for the bigger picture.
 * In the future Froogle could be used to compare other big merchants, websites, even coding languages, and more! 
 * We also want to provide filters in the near future to make a more positive user expirence.
-## Support
-* Contact DavidCode0395@gmail.com for any questions or concerns.
